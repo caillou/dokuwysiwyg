@@ -1,0 +1,9 @@
+span.footnote {
+    color: #666;
+    background-color : #eee;
+    /*
+    border: dashed 1px #aaa !important;
+    */
+    margin: 0px 1px 0px 1px;
+    padding: 0px 2px 0px 2px;
+}

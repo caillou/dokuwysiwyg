@@ -1,0 +1,20 @@
+DokuWysiwyg
+===========
+
+DokuWysiwyg is a wysiwyg editor for DokuWiki.
+
+It is a JavaScript only port of the older [FCKW Plugin][fckw] which heavily relied on Pearl.
+
+The editor pretty much functions, yet there are two things to to:
+
+1. Basic refactoring
+--------------------
+
+A lot of this code was written before I had any clue of JavaScript. And you can tell by looking at it.
+
+2. Getting rid of the FCK editor
+--------------------------------
+
+The FCK editor that comes with this plugin is an old version that has been heavily hacked. It comes from the [FCKW Plugin][fckw] Project. Hence, it can not be updated to the newest version. This should be replaced by a more modern and modular wysiwyg editor.
+
+[fckw]: https://fosswiki.liip.ch/display/DOKU/FCKW+DokuWiki+Plugin "FCKW DokuWiki Plugin "

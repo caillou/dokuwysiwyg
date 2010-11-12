@@ -1,0 +1,9 @@
+.fckw_page_title_field{
+    margin-right: 5px;
+    font-size:160%;
+    font-weight:bold;
+    float: left;
+}
+label.fckw_page_title_field {
+    color: __border__;
+}

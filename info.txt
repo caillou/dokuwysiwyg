@@ -1,0 +1,8 @@
+# General Plugin Info do not edit
+
+author Pierre Spring
+email  pierre.spring@liip.ch
+date   2009-06-11
+name   FCKW Plugin
+desc   Use the open-source wysiwyg FCKEditor in a nondestructive way, maintaining wiki syntax.
+url    https://fosswiki.liip.ch/display/DOKU/FCKW+Dokuwiki+Plugin
