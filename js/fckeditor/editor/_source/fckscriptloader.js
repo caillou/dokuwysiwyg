@@ -96,7 +96,7 @@ FCKScriptLoader.AddScript( 'FCK_Xhtml10Transitional', '../dtd/' ) ;
 
 FCKScriptLoader.AddScript( 'FCKDataProcessor'	, 'classes/'	, ['FCKConfig','FCKBrowserInfo','FCKRegexLib','FCKXHtml'] ) ;
 FCKScriptLoader.AddScript( 'FCKDocumentFragment', 'classes/'	, ['FCKDomTools'], FCK_SPECIFIC ) ;
-FCKScriptLoader.AddScript( 'FCKDomRange'		, 'classes/'	, ['FCKBrowserInfo','FCKJSCoreExtensions','FCKW3CRange','FCKElementPath','FCKDomTools','FCKTools','FCKDocumentFragment'], FCK_GENERIC_SPECIFIC ) ;
+FCKScriptLoader.AddScript( 'FCKDomRange'		, 'classes/'	, ['FCKBrowserInfo','FCKJSCoreExtensions','dokuwysiwyg3CRange','FCKElementPath','FCKDomTools','FCKTools','FCKDocumentFragment'], FCK_GENERIC_SPECIFIC ) ;
 FCKScriptLoader.AddScript( 'FCKDomRangeIterator', 'classes/'	, ['FCKDomRange','FCKListsLib'], FCK_GENERIC ) ;
 FCKScriptLoader.AddScript( 'FCKElementPath'		, 'classes/'	, ['FCKListsLib'], FCK_GENERIC ) ;
 FCKScriptLoader.AddScript( 'FCKEnterKey'		, 'classes/'	, ['FCKDomRange','FCKDomTools','FCKTools','FCKKeystrokeHandler','FCKListHandler'], FCK_GENERIC ) ;
@@ -104,7 +104,7 @@ FCKScriptLoader.AddScript( 'FCKPanel'			, 'classes/'	, ['FCKBrowserInfo','FCKCon
 FCKScriptLoader.AddScript( 'FCKImagePreloader'	, 'classes/' ) ;
 FCKScriptLoader.AddScript( 'FCKKeystrokeHandler', 'classes/'	, ['FCKConstants','FCKBrowserInfo','FCKTools'], FCK_GENERIC ) ;
 FCKScriptLoader.AddScript( 'FCKStyle'			, 'classes/'	, ['FCKConstants','FCKDomRange','FCKDomRangeIterator','FCKDomTools','FCKListsLib','FCK_Xhtml10Transitional'], FCK_GENERIC ) ;
-FCKScriptLoader.AddScript( 'FCKW3CRange'		, 'classes/'	, ['FCKDomTools','FCKTools','FCKDocumentFragment'], FCK_GENERIC ) ;
+FCKScriptLoader.AddScript( 'dokuwysiwyg3CRange'		, 'classes/'	, ['FCKDomTools','FCKTools','FCKDocumentFragment'], FCK_GENERIC ) ;
 
 FCKScriptLoader.AddScript( 'FCKBrowserInfo'		, 'internals/'	, ['FCKJSCoreExtensions'] ) ;
 FCKScriptLoader.AddScript( 'FCKCodeFormatter'	, 'internals/' ) ;

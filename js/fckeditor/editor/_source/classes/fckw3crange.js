@@ -23,7 +23,7 @@
  * http://www.w3.org/TR/DOM-Level-2-Traversal-Range/ranges.html
  */
 
-var FCKW3CRange = function( parentDocument )
+var dokuwysiwyg3CRange = function( parentDocument )
 {
 	this._Document = parentDocument ;
 
@@ -34,7 +34,7 @@ var FCKW3CRange = function( parentDocument )
 	this.collapsed		= true ;
 }
 
-FCKW3CRange.CreateRange = function( parentDocument )
+dokuwysiwyg3CRange.CreateRange = function( parentDocument )
 {
 	// We could opt to use the Range implementation of the browsers. The problem
 	// is that every browser have different bugs on their implementations,
@@ -50,18 +50,18 @@ FCKW3CRange.CreateRange = function( parentDocument )
 			return range ;
 	}
 	*/
-	return new FCKW3CRange( parentDocument ) ;
+	return new dokuwysiwyg3CRange( parentDocument ) ;
 }
 
-FCKW3CRange.CreateFromRange = function( parentDocument, sourceRange )
+dokuwysiwyg3CRange.CreateFromRange = function( parentDocument, sourceRange )
 {
-	var range = FCKW3CRange.CreateRange( parentDocument ) ;
+	var range = dokuwysiwyg3CRange.CreateRange( parentDocument ) ;
 	range.setStart( sourceRange.startContainer, sourceRange.startOffset ) ;
 	range.setEnd( sourceRange.endContainer, sourceRange.endOffset ) ;
 	return range ;
 }
 
-FCKW3CRange.prototype =
+dokuwysiwyg3CRange.prototype =
 {
 
 	_UpdateCollapsed : function()
@@ -442,6 +442,6 @@ FCKW3CRange.prototype =
 
 	cloneRange : function()
 	{
-		return FCKW3CRange.CreateFromRange( this._Document, this ) ;
+		return dokuwysiwyg3CRange.CreateFromRange( this._Document, this ) ;
 	}
 } ;

@@ -40,7 +40,7 @@ function InitializeAPI()
 		// objects that aren't really FCKeditor instances.
 		var sScript =
 			'var FCKeditorAPI = {' +
-				'Version : "2.5.1.fckw.0.8",' +
+				'Version : "2.5.1.dokuwysiwyg.0.8",' +
 				'VersionBuild : "21536",' +
 				'__Instances : new Object(),' +
 

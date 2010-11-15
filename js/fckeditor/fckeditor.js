@@ -59,7 +59,7 @@ FCKeditor.MinHeight = 200 ;
  */
 FCKeditor.MinWidth = 750 ;
 
-FCKeditor.prototype.Version			= '2.5.1.fckw.0.8' ;
+FCKeditor.prototype.Version			= '2.5.1.dokuwysiwyg.0.8' ;
 FCKeditor.prototype.VersionBuild	= '21536' ;
 
 FCKeditor.prototype.Create = function()

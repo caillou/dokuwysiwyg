@@ -27,7 +27,7 @@ FCKDomRange.prototype.MoveToSelection = function()
 {
 	this.Release( true ) ;
 
-	this._Range = new FCKW3CRange( this.Window.document ) ;
+	this._Range = new dokuwysiwyg3CRange( this.Window.document ) ;
 
 	var oSel = this.Window.document.selection ;
 

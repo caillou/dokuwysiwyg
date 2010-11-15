@@ -759,7 +759,7 @@ function BrowsePages()
 {
     var ns = getNS();
     //open a popup window when the button is clicked
-    window.open(FCKConfig.DokuWikiBasePath + "doku.php?id=start&idx=:"+ns+"&fckw=1", 'pages', 'width=750,height=500,left=20,top=20,scrollbars=yes,resizable=yes');
+    window.open(FCKConfig.DokuWikiBasePath + "doku.php?id=start&idx=:"+ns+"&dokuwysiwyg=1", 'pages', 'width=750,height=500,left=20,top=20,scrollbars=yes,resizable=yes');
 }
 
 function insertTags(edid, tagOpen, tagClose, sampleText) {

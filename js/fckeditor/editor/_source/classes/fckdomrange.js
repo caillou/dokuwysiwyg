@@ -78,7 +78,7 @@ FCKDomRange.prototype =
 
 	CreateRange : function()
 	{
-		return new FCKW3CRange( this.Window.document ) ;
+		return new dokuwysiwyg3CRange( this.Window.document ) ;
 	},
 
 	DeleteContents : function()
@@ -502,7 +502,7 @@ FCKDomRange.prototype =
 
 		// Generate the W3C Range object and update relevant data
 		this.Release( true ) ;
-		this._Range = new FCKW3CRange( this.Window.document ) ;
+		this._Range = new dokuwysiwyg3CRange( this.Window.document ) ;
 		var startOffset = bookmark.Start[ bookmark.Start.length - 1 ] ;
 		var endOffset = bookmark.End[ bookmark.End.length - 1 ] ;
 		while ( curStart.nodeType == 3 && startOffset > curStart.length )

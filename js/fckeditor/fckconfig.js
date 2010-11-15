@@ -24,7 +24,7 @@
  * http://wiki.fckeditor.net/Developer%27s_Guide/Configuration/Configurations_Settings
  */
 
-FCKConfig.DokuWikiBasePath = FCKConfig.BasePath.replace(/lib\/plugins\/fckw\/js\/.*$/,"");
+FCKConfig.DokuWikiBasePath = FCKConfig.BasePath.replace(/lib\/plugins\/dokuwysiwyg\/js\/.*$/,"");
 FCKConfig.DokuWikiLinkProtocols = "wiki,http,https,ftp,window share";
 FCKConfig.DokuWikiIncrementHeaders = false;
 

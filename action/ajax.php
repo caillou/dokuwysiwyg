@@ -23,7 +23,7 @@ class action_plugin_dokuwysiwyg_ajax extends DokuWiki_Action_Plugin {
     {
         global $ID;
 
-        if ($event->data != 'fckw_get_xhtml') {
+        if ($event->data != 'dokuwysiwyg_get_xhtml') {
             return;
         }
         if (!(isset($_POST['text']) && $_POST['text'])) {

@@ -1,6 +1,6 @@
 <?php 
 /**
- * Load CSS from DokuWiki StyleSheet creator and do some RegEx for the fckw editor
+ * Load CSS from DokuWiki StyleSheet creator and do some RegEx for the dokuwysiwyg editor
  *
  * @license    GPL 2 (http://www.gnu.org/licenses/gpl.html)
  * @author     Pierre Spring <pierre.spring@liip.org>

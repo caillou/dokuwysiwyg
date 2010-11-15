@@ -408,7 +408,7 @@ function BrowseServer()
             ns = "";
         }
     }
-    var url= FCKConfig.DokuWikiBasePath + 'lib/exe/mediamanager.php?fckw=1&ns=' + ns;
+    var url= FCKConfig.DokuWikiBasePath + 'lib/exe/mediamanager.php?dokuwysiwyg=1&ns=' + ns;
     //open a popup window when the button is clicked
     window.open(url, 'mediamanager', 'width=750,height=500,left=20,top=20,scrollbars=yes,resizable=yes');
 }

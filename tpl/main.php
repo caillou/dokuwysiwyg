@@ -73,7 +73,7 @@ function init_index()
     var pattern = new RegExp("(^|\\s)idx_dir(\\s|$)");
     for(i=0; i<links.length; i++) {
         if ( pattern.test(links[i].className) ) {
-            links[i].href += '&fckw=1';
+            links[i].href += '&dokuwysiwyg=1';
         } else {
             addEvent(links[i], "click", page_click);
         }

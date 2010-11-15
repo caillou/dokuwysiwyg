@@ -105,7 +105,7 @@
 		<File path="editor/_source/classes/fckdomrange_ie.js" />
 		<File path="editor/_source/classes/fckdomrangeiterator.js" />
 		<File path="editor/_source/classes/fckdocumentfragment_ie.js" />
-		<File path="editor/_source/classes/fckw3crange.js" />
+		<File path="editor/_source/classes/dokuwysiwyg3crange.js" />
 		<File path="editor/_source/classes/fckenterkey.js" />
 
 		<File path="editor/_source/internals/fckdocumentprocessor.js" />
@@ -201,7 +201,7 @@
 		<File path="editor/_source/classes/fckdomrange_gecko.js" />
 		<File path="editor/_source/classes/fckdomrangeiterator.js" />
 		<File path="editor/_source/classes/fckdocumentfragment_gecko.js" />
-		<File path="editor/_source/classes/fckw3crange.js" />
+		<File path="editor/_source/classes/dokuwysiwyg3crange.js" />
 		<File path="editor/_source/classes/fckenterkey.js" />
 
 		<File path="editor/_source/internals/fckdocumentprocessor.js" />

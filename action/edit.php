@@ -26,11 +26,11 @@ class action_plugin_dokuwysiwyg_edit extends DokuWiki_Action_Plugin {
 
     function register(&$controller)
     {
-        $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'fckw_edit_meta');
+        $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'dokuwysiwyg_edit_meta');
     }
 
     /**
-     * fckw_edit_meta 
+     * dokuwysiwyg_edit_meta 
      *
      * load fck js
      * 
@@ -38,7 +38,7 @@ class action_plugin_dokuwysiwyg_edit extends DokuWiki_Action_Plugin {
      * @access public
      * @return void
      */
-    function fckw_edit_meta(&$event)
+    function dokuwysiwyg_edit_meta(&$event)
     {
         global $ACT;
 
@@ -90,7 +90,7 @@ class action_plugin_dokuwysiwyg_edit extends DokuWiki_Action_Plugin {
 
                             jQuery.noConflict();
 
-                            var fckw_lang = 
+                            var dokuwysiwyg_lang = 
                                 {
                                     btn_save:'{$lang['btn_save']}',
                                     btn_cancel:'{$lang['btn_cancel']}',
@@ -101,11 +101,11 @@ class action_plugin_dokuwysiwyg_edit extends DokuWiki_Action_Plugin {
                                     label_notoc:'".$this->getLang('notoc')."'
                                 };
                             var ID = '$ID';
-                            var fckw_link_protocols = '".$this->getConf('link_protocols')."';
-                            var fckw_dicussion_plugin_active = ".((@plugin_load('action','discussion') && !plugin_isdisabled('discussion'))?'true':'false').";
+                            var dokuwysiwyg_link_protocols = '".$this->getConf('link_protocols')."';
+                            var dokuwysiwyg_dicussion_plugin_active = ".((@plugin_load('action','discussion') && !plugin_isdisabled('discussion'))?'true':'false').";
                             var separate_page_title = ". ($this->getConf('separate_page_title')?'true':'false') .";
-                            var fckw_default_wysiwyg = ". ($this->getConf('default_wysiwyg')?'true':'false') .";
-                            var fckw_toolbar = '$toolbar';
+                            var dokuwysiwyg_default_wysiwyg = ". ($this->getConf('default_wysiwyg')?'true':'false') .";
+                            var dokuwysiwyg_toolbar = '$toolbar';
                             var DOKU_REL = '".DOKU_REL."';
                     "
         );

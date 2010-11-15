@@ -13,7 +13,7 @@ require_once DOKU_INC.'inc/parser/xhtml.php';
 /**
  * The Renderer
  */
-class renderer_plugin_fckw extends Doku_Renderer_xhtml
+class renderer_plugin_dokuwysiwyg extends Doku_Renderer_xhtml
 {
     
     function document_start() {
@@ -62,7 +62,7 @@ class renderer_plugin_fckw extends Doku_Renderer_xhtml
      */
     function getFormat()
     {
-        return 'fckw';
+        return 'dokuwysiwyg';
     }
 
 

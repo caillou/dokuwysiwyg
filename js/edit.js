@@ -574,26 +574,26 @@ var renderer =
 
 }
 
-var fckw_ajax_object = new sack();
-var fckw_page_element = null;
-var fckw_draft_status_parent = null;
+var dokuwysiwyg_ajax_object = new sack();
+var dokuwysiwyg_page_element = null;
+var dokuwysiwyg_draft_status_parent = null;
 
-var fckw_get_page_element = function() {
-    if (fckw_page_element == null) {
-        fckw_page_element = fckw_get_draft_status_parent().parentNode.parentNode;//getElementsByClass('page',null,'div')[0];
+var dokuwysiwyg_get_page_element = function() {
+    if (dokuwysiwyg_page_element == null) {
+        dokuwysiwyg_page_element = dokuwysiwyg_get_draft_status_parent().parentNode.parentNode;//getElementsByClass('page',null,'div')[0];
     }
-    return fckw_page_element;
+    return dokuwysiwyg_page_element;
 }
 
-var fckw_get_draft_status_parent = function () 
+var dokuwysiwyg_get_draft_status_parent = function () 
 {
-    if (!fckw_draft_status_parent) {
-        fckw_draft_status_parent = document.getElementById('draft__status').parentNode;
+    if (!dokuwysiwyg_draft_status_parent) {
+        dokuwysiwyg_draft_status_parent = document.getElementById('draft__status').parentNode;
     }
-    return fckw_draft_status_parent;
+    return dokuwysiwyg_draft_status_parent;
 }
 
-var init_fckw = function() {
+var init_dokuwysiwyg = function() {
     var btn = document.createElement('input');
     btn.setAttribute('id', 'edbtn__wysiwyg');
     btn.className = 'button';
@@ -604,7 +604,7 @@ var init_fckw = function() {
     var edbtn__preview = document.getElementById('edbtn__preview');
     edbtn__preview.parentNode.appendChild(btn);
     
-    if (fckw_default_wysiwyg) {
+    if (dokuwysiwyg_default_wysiwyg) {
         get_xhtml(null);
     }
 }
@@ -616,19 +616,19 @@ var write_back = function(name, save_draft)
     
     if (separate_page_title) {
         // prepend the title
-        var title = jQuery('#fckw_title').val();
+        var title = jQuery('#dokuwysiwyg_title').val();
         if (title) {
             wiki_text = '====== ' + title + ' ======' + "\n\n" + wiki_text;
         }
     }
-    if (fckw_dicussion_plugin_active) {
-        wiki_text += "\n\n" + '~~DISCUSSION' + (jQuery('#fckw_discussion_cb').attr('checked')?'':':off') + '~~';
+    if (dokuwysiwyg_dicussion_plugin_active) {
+        wiki_text += "\n\n" + '~~DISCUSSION' + (jQuery('#dokuwysiwyg_discussion_cb').attr('checked')?'':':off') + '~~';
     }
     
-    if (jQuery('#fckw_nocache_cb').attr('checked')) {
+    if (jQuery('#dokuwysiwyg_nocache_cb').attr('checked')) {
         wiki_text += "\n\n" + '~~NOCACHE~~';
     }
-    if (jQuery('#fckw_notoc_cb').attr('checked')) {
+    if (jQuery('#dokuwysiwyg_notoc_cb').attr('checked')) {
         wiki_text += "\n\n" + '~~NOTOC~~';
     }
     
@@ -650,24 +650,24 @@ var edit_wikisyntax = function()
     write_back('wiki__xtext', true);
 
     xpage.style.display='none';
-    fckw_get_page_element().style.display='';
+    dokuwysiwyg_get_page_element().style.display='';
 
     // move the draft__status box to its original place
     var draft_status_box = document.getElementById('draft__status');
     draft_status_box.parentNode.removeChild(draft_status_box);
-    fckw_get_draft_status_parent().insertBefore(draft_status_box, fckw_get_draft_status_parent().firstChild);
+    dokuwysiwyg_get_draft_status_parent().insertBefore(draft_status_box, dokuwysiwyg_get_draft_status_parent().firstChild);
 }
 
 var get_xhtml = function (e) {
-    fckw_ajax_object.setVar('call', 'fckw_get_xhtml');
-    fckw_ajax_object.setVar('ID', ID);
+    dokuwysiwyg_ajax_object.setVar('call', 'dokuwysiwyg_get_xhtml');
+    dokuwysiwyg_ajax_object.setVar('ID', ID);
     // when moving to the updated version of SACK (v. 1.6.1 or newer),
     // you will need to remove the encodeURIComponent().
-    fckw_ajax_object.setVar('text', encodeURIComponent($('wiki__text').value));
-    fckw_ajax_object.requestFile = DOKU_BASE + 'lib/exe/ajax.php';
-    fckw_ajax_object.method = 'POST';
-    fckw_ajax_object.onCompletion = fckw_on_completion;
-    fckw_ajax_object.runAJAX();
+    dokuwysiwyg_ajax_object.setVar('text', encodeURIComponent($('wiki__text').value));
+    dokuwysiwyg_ajax_object.requestFile = DOKU_BASE + 'lib/exe/ajax.php';
+    dokuwysiwyg_ajax_object.method = 'POST';
+    dokuwysiwyg_ajax_object.onCompletion = dokuwysiwyg_on_completion;
+    dokuwysiwyg_ajax_object.runAJAX();
 
     if (e) {
         if (!!(window.attachEvent && !window.opera)){
@@ -683,8 +683,8 @@ var get_xhtml = function (e) {
     
     // move the draft__status box into a visible place
     var draft_status_box = document.getElementById('draft__status');
-    fckw_get_draft_status_parent().removeChild(draft_status_box);
-    fckw_get_page_element().parentNode.insertBefore(draft_status_box, fckw_get_page_element());
+    dokuwysiwyg_get_draft_status_parent().removeChild(draft_status_box);
+    dokuwysiwyg_get_page_element().parentNode.insertBefore(draft_status_box, dokuwysiwyg_get_page_element());
 }
 
 var xpage = null;
@@ -694,7 +694,7 @@ var set_title = function () {
     
     if (title) {
         // set the title to the input field
-        jQuery('#fckw_title').val(title);
+        jQuery('#dokuwysiwyg_title').val(title);
 
         // remove the title from the text
         var without_first_title = jQuery('<div>'+jQuery('#wiki__xtext').val()+'</div>').find('h1').eq(0).remove().end().end().html();
@@ -706,9 +706,9 @@ var set_discussion = function () {
     var match = jQuery('#wiki__xtext').val().match(/~~DISCUSSION([^~]*)~~/);
     
     if (match == null || match[1] != '') {
-        jQuery('#fckw_discussion_cb').attr('checked', false);
+        jQuery('#dokuwysiwyg_discussion_cb').attr('checked', false);
     } else {
-        jQuery('#fckw_discussion_cb').attr('checked', true);
+        jQuery('#dokuwysiwyg_discussion_cb').attr('checked', true);
     }
     
     // remove the plugin from the wiki text
@@ -721,32 +721,32 @@ var set_no = function (macro) {
     var wiki__xtext = original_wiki__xtext.replace(macro_regex, '');
     if (wiki__xtext.length != original_wiki__xtext.length) {
         jQuery('#wiki__xtext').val(wiki__xtext);
-        jQuery('#fckw_no'+macro+'_cb').attr('checked', true);
+        jQuery('#dokuwysiwyg_no'+macro+'_cb').attr('checked', true);
     } else {
-        jQuery('#fckw_no'+macro+'_cb').attr('checked', false);
+        jQuery('#dokuwysiwyg_no'+macro+'_cb').attr('checked', false);
     }
 }
 
-var fckw_on_completion = function () {
-    if (fckw_ajax_object.responseStatus[0] != 200) {
+var dokuwysiwyg_on_completion = function () {
+    if (dokuwysiwyg_ajax_object.responseStatus[0] != 200) {
         return;
     }
 
-    fckw_get_page_element().style.display='none';
+    dokuwysiwyg_get_page_element().style.display='none';
     
     if (xpage != null) {
         // the wysiwyg editor has already been rendered.
         // we update the content and leave.
         area = document.getElementById('wiki__xtext');
-        area.value = fckw_ajax_object.response;
+        area.value = dokuwysiwyg_ajax_object.response;
         document.getElementById('edit__xsummary').value = document.getElementById('edit__summary').value;
         
-        jQuery('#wiki__xtext').val(fckw_ajax_object.response);
+        jQuery('#wiki__xtext').val(dokuwysiwyg_ajax_object.response);
         if (separate_page_title) {
             set_title();
         }
         
-        if (fckw_dicussion_plugin_active) {
+        if (dokuwysiwyg_dicussion_plugin_active) {
             set_discussion();
         }
         set_no('toc');
@@ -760,25 +760,25 @@ var fckw_on_completion = function () {
     xpage = document.createElement('div');
     xpage.className = 'xpage';
     xpage.setAttribute('id', 'xpage');
-    fckw_get_page_element().parentNode.insertBefore(xpage, fckw_get_page_element().nextSibling);
+    dokuwysiwyg_get_page_element().parentNode.insertBefore(xpage, dokuwysiwyg_get_page_element().nextSibling);
 
 
     jQuery('<textarea/>')
         .attr('id', 'wiki__xtext')
-        .val(fckw_ajax_object.response)
+        .val(dokuwysiwyg_ajax_object.response)
         .appendTo(xpage);
 
     if (separate_page_title) {
         jQuery('<input/>')
             .attr('type', 'text')
-            .attr('name', 'fckw_title')
-            .attr('id', 'fckw_title')
-            .addClass('fckw_page_title_field')
+            .attr('name', 'dokuwysiwyg_title')
+            .attr('id', 'dokuwysiwyg_title')
+            .addClass('dokuwysiwyg_page_title_field')
             .prependTo(xpage);
         jQuery('<label/>')
-            .addClass('fckw_page_title_field')
+            .addClass('dokuwysiwyg_page_title_field')
             .addClass('nowrap')
-            .attr('for', 'fckw_title')
+            .attr('for', 'dokuwysiwyg_title')
             .html('Title:')
             .prependTo(xpage);
 
@@ -791,7 +791,7 @@ var fckw_on_completion = function () {
     
     var check_boxes = ['notoc', 'nocache'];
     
-    if (fckw_dicussion_plugin_active) {
+    if (dokuwysiwyg_dicussion_plugin_active) {
         check_boxes.push('discussion');
     }
     
@@ -801,19 +801,19 @@ var fckw_on_completion = function () {
             .append((i==0)?'':' | ')
             .append(
                 jQuery('<input type="checkbox"/>')
-                    .attr('id', 'fckw_'+check_boxes[i]+'_cb')
+                    .attr('id', 'dokuwysiwyg_'+check_boxes[i]+'_cb')
             )
             .append('&nbsp;')
             .append(
                 jQuery('<label/>')
-                    .html(fckw_lang['label_'+check_boxes[i]])
+                    .html(dokuwysiwyg_lang['label_'+check_boxes[i]])
             );
     }
     
     set_no('toc');
     set_no('cache');
     
-    if (fckw_dicussion_plugin_active) {
+    if (dokuwysiwyg_dicussion_plugin_active) {
         set_discussion();        
     }
 
@@ -833,16 +833,16 @@ var fckw_on_completion = function () {
         btn.setAttribute('id', 'edbtn__x'+cmds[i]);
         btn.className =  'button';
         btn.setAttribute('type', 'submit');
-        btn.setAttribute('value', fckw_lang['btn_'+cmds[i]]);
+        btn.setAttribute('value', dokuwysiwyg_lang['btn_'+cmds[i]]);
         switch(cmds[i]) {
             case 'wikisyntax':
                 addEvent(btn, "click", edit_wikisyntax);
                 break;
             case 'save':
-                addEvent(btn, 'click', fckw_save);
+                addEvent(btn, 'click', dokuwysiwyg_save);
                 break;
             case 'cancel':
-                addEvent(btn, 'click', fckw_cancel);
+                addEvent(btn, 'click', dokuwysiwyg_cancel);
                 break;
         }
         buttons.appendChild(btn);
@@ -858,7 +858,7 @@ var fckw_on_completion = function () {
     summary.appendChild(label);
 
     var span = document.createElement('span');
-    span.appendChild(document.createTextNode(fckw_lang['summary']+' '));
+    span.appendChild(document.createTextNode(dokuwysiwyg_lang['summary']+' '));
     label.appendChild(span);
 
     var inp = document.createElement('input');
@@ -872,15 +872,15 @@ var fckw_on_completion = function () {
 
 
     var fck = new FCKeditor("wiki__xtext", "100%", "600");
-    fck.BasePath = DOKU_BASE + 'lib/plugins/fckw/js/fckeditor/';
-    fck.Config["DokuWikiLinkProtocols"] = fckw_link_protocols;
+    fck.BasePath = DOKU_BASE + 'lib/plugins/dokuwysiwyg/js/fckeditor/';
+    fck.Config["DokuWikiLinkProtocols"] = dokuwysiwyg_link_protocols;
     fck.Config['EditorAreaCSS'] = [fck.BasePath +'../../exe/css.php?s=all', fck.BasePath +'../../exe/css.php', fck.BasePath + 'editor/css/fck_editorarea.css'];
-    fck.ToolbarSet = fckw_toolbar;
+    fck.ToolbarSet = dokuwysiwyg_toolbar;
     fck.ReplaceTextarea();
 
 }
 
-var fckw_save =  function()
+var dokuwysiwyg_save =  function()
 {
     write_back('wiki__xtext', false);
     var form = $('dw__editform');
@@ -890,26 +890,26 @@ var fckw_save =  function()
     jQuery('#edbtn__save').click();
 }
 
-var fckw_draft_timeout = 30*1000; // miliseconds used for drafts
+var dokuwysiwyg_draft_timeout = 30*1000; // miliseconds used for drafts
 var FCKeditor_OnComplete = function( editorInstance )
 {
     // initChangeCheck("lalala");
     textChanged = true;
     summaryCheck();
-    setTimeout('fckw_save_draft(\''+editorInstance.Name+'\');', fckw_draft_timeout);
+    setTimeout('dokuwysiwyg_save_draft(\''+editorInstance.Name+'\');', dokuwysiwyg_draft_timeout);
 }
 
-var fckw_save_draft = function(name)
+var dokuwysiwyg_save_draft = function(name)
 {
     var oEditor = FCKeditorAPI.GetInstance(name) ;
     if (oEditor.IsDirty()) {
         write_back('wiki__xtext', true);
     }
 
-    setTimeout('fckw_save_draft(\''+name+'\');', fckw_draft_timeout);
+    setTimeout('dokuwysiwyg_save_draft(\''+name+'\');', dokuwysiwyg_draft_timeout);
 }
 
-var fckw_cancel = function()
+var dokuwysiwyg_cancel = function()
 {
     // TODO: check if you really need this ajax call from
     // the changeCheck function
@@ -922,4 +922,4 @@ var fckw_cancel = function()
     }
 
 }
-$(init_fckw);
+$(init_dokuwysiwyg);

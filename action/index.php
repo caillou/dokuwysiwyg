@@ -19,14 +19,14 @@ class action_plugin_dokuwysiwyg_index extends DokuWiki_Action_Plugin {
 
     function register(&$controller)
     {
-        $controller->register_hook('ACTION_ACT_PREPROCESS', 'BEFORE', $this, 'fckw_index');
+        $controller->register_hook('ACTION_ACT_PREPROCESS', 'BEFORE', $this, 'dokuwysiwyg_index');
     }
 
-    function fckw_index(&$event)
+    function dokuwysiwyg_index(&$event)
     {
         global $ACT;
         // we only change the edit behaviour
-        if ($ACT != 'index' || !isset($_REQUEST['fckw']) ){
+        if ($ACT != 'index' || !isset($_REQUEST['dokuwysiwyg']) ){
             return;
         }
         global $conf;
@@ -34,7 +34,7 @@ class action_plugin_dokuwysiwyg_index extends DokuWiki_Action_Plugin {
         $conf['userewrite'] = '0';
 
         $conf['template.bak'] = $conf['template'];
-        $conf['template'] = "../plugins/fckw/tpl";
+        $conf['template'] = "../plugins/dokuwysiwyg/tpl";
     }
 }
 

@@ -160,7 +160,7 @@ FCKListCommand.prototype =
 					nextRangeExists = false ;
 				else
 				{
-					var internalRange = FCKW3CRange.CreateFromRange( doc, rangeQueue.shift() ) ;
+					var internalRange = dokuwysiwyg3CRange.CreateFromRange( doc, rangeQueue.shift() ) ;
 					range._Range = internalRange ;
 					range._UpdateElementInfo() ;
 					if ( range.StartNode.nodeName.IEquals( 'td' ) )

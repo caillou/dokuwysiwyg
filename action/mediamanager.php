@@ -32,7 +32,7 @@ class action_plugin_dokuwysiwyg_mediamanager extends DokuWiki_Action_Plugin {
             return;
         }
         
-        if (!isset($_GET['fckw']) || !$_GET['fckw']) {
+        if (!isset($_GET['dokuwysiwyg']) || !$_GET['dokuwysiwyg']) {
             return;
         }
 

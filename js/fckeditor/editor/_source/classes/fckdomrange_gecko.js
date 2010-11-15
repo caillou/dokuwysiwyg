@@ -31,7 +31,7 @@ FCKDomRange.prototype.MoveToSelection = function()
 
 	if ( oSel && oSel.rangeCount > 0 )
 	{
-		this._Range = FCKW3CRange.CreateFromRange( this.Window.document, oSel.getRangeAt(0) ) ;
+		this._Range = dokuwysiwyg3CRange.CreateFromRange( this.Window.document, oSel.getRangeAt(0) ) ;
 		this._UpdateElementInfo() ;
 	}
 	else
