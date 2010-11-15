@@ -8,7 +8,7 @@ require_once(DOKU_PLUGIN.'action.php');
  * @author     David Buchmann <david.buchmann@liip.ch>, Pierre Spring <pierre.spring@liip.ch>
  */
 
-class action_plugin_fckw_ajax extends DokuWiki_Action_Plugin {
+class action_plugin_dokuwysiwyg_ajax extends DokuWiki_Action_Plugin {
 
     function getInfo()
     {

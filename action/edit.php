@@ -8,7 +8,7 @@ require_once(DOKU_PLUGIN.'action.php');
  * @author     Pierre Spring <pierre.spring@liip.ch>
  */
 
-class action_plugin_fckw_edit extends DokuWiki_Action_Plugin {
+class action_plugin_dokuwysiwyg_edit extends DokuWiki_Action_Plugin {
     var $fck_location        = false;
 
     function init()
